@@ -28,8 +28,8 @@ Member 1 ----- * Reservation * ----- 1 Book
 
 - Register members and add catalog titles/copies
 - Search by title or author
-- Check out an available copy while enforcing a borrowing limit
-- Reserve a title with FIFO ordering
+- Check out an available copy directly while enforcing a borrowing limit
+- Reserve an unavailable title with FIFO ordering; a returned copy is held for the next member
 - Renew a loan unless the renewal limit is reached or a member is waiting
 - Return a copy, calculate an overdue fine, and reserve it for the next member
 - Publish an availability notification through an observer interface

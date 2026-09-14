@@ -47,5 +47,8 @@ public final class Main {
         System.out.println("Returned " + loan.id());
         System.out.println("Fine: " + result.fine().amount());
         System.out.println("Status: " + copy.status());
+
+        Loan bobLoan = library.checkout(bob.id(), copy.barcode(), LocalDate.of(2026, 9, 21));
+        System.out.println("Reserved copy checked out by " + bob.id() + ": " + bobLoan.id());
     }
 }

@@ -10,6 +10,7 @@ public final class Reservation {
     private final String isbn;
     private final LocalDate createdAt;
     private ReservationStatus status = ReservationStatus.WAITING;
+    private String assignedBarcode;
 
     public Reservation(String memberId, String isbn, LocalDate createdAt) {
         this.memberId = memberId;
@@ -22,8 +23,14 @@ public final class Reservation {
     public String isbn() { return isbn; }
     public LocalDate createdAt() { return createdAt; }
     public ReservationStatus status() { return status; }
+    public String assignedBarcode() { return assignedBarcode; }
 
     public void changeStatus(ReservationStatus status) {
         this.status = status;
+    }
+
+    /** Assigns the physical copy that has been placed on hold for this request. */
+    public void assignCopy(String barcode) {
+        this.assignedBarcode = barcode;
     }
 }
